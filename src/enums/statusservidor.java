@@ -1,6 +1,6 @@
 package enums;
 
-public enum StatusServidor {
+public enum statusservidor {
 
 	ONLINE,
 

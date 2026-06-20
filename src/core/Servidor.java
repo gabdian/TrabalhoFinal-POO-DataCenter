@@ -1,6 +1,6 @@
 package core;
 
-import enums.StatusServidor;
+import enums.statusservidor;
 
 public class Servidor {
 
@@ -14,7 +14,7 @@ public class Servidor {
 
 	private List sensores;
 
-	private StatusServidor status;
+	private statusservidor status;
 
 	public boolean adicionarSensor() {
 		return false;
