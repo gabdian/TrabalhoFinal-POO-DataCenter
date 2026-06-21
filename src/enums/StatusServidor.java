@@ -1,6 +1,6 @@
 package enums;
 
-public enum statusservidor {
+public enum StatusServidor {
 
 	ONLINE,
 
@@ -8,6 +8,5 @@ public enum statusservidor {
 
 	SOBRECARGA,
 
-	MANUTENCAO;
-
+	MANUTENCAO
 }

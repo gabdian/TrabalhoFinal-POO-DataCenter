@@ -1,7 +1,7 @@
 package core;
 
 import dispositivo.Monitoravel;
-import enums.statusdatacenter;
+import enums.StatusDatacenter;
 import relatorio.Relatorio;
 
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ public class DataCenter {
 
 	private List dispositivo;
 
-	private statusdatacenter status;
+	private StatusDatacenter status;
 
 	private Relatorio[] relatorio;
 

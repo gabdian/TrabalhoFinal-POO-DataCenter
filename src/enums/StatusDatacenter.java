@@ -1,11 +1,11 @@
 package enums;
 
-public enum statusdatacenter {
+public enum StatusDatacenter {
 
 	ATIVO,
 
 	EM_MANUTENCAO,
 
-	INATIVO;
+	INATIVO
 
 }

@@ -1,157 +1,106 @@
 package core;
 
-import enums.statusservidor;
-
-import java.util.List;
+import enums.StatusServidor;
+import sensor.Sensor;
 
 import java.util.List;
 
 public class Servidor {
 
-	private int id;
+    private int id;
 
-	private String nome;
+    private String nome;
 
-	private String enderecoIP;
+    private String enderecoIP;
 
-	private String sistemaOperacional;
+    private String sistemaOperacional;
 
-	private List sensores;
+    private List sensores;
 
-	private statusservidor status;
+    private StatusServidor status;
 
-	public Servidor(int id, String nome, String enderecoIP, String sistemaOperacional, List sensores, StatusServidor status) {
-		this.id = id;
-		this.nome = nome;
-		this.enderecoIP = enderecoIP;
-		this.sistemaOperacional = sistemaOperacional;
-		this.sensores = sensores;
-		this.status = status;
-	}
+    public Servidor(int id, String nome, String enderecoIP, String sistemaOperacional, List sensores, StatusServidor status) {
+        this.id = id;
+        this.nome = nome;
+        this.enderecoIP = enderecoIP;
+        this.sistemaOperacional = sistemaOperacional;
+        this.sensores = sensores;
+        this.status = status;
+    }
 
-	public int getId() {
-		return id;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public String getNome() {
-		return nome;
-	}
+    public String getNome() {
+        return nome;
+    }
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-	public String getEnderecoIP() {
-		return enderecoIP;
-	}
+    public String getEnderecoIP() {
+        return enderecoIP;
+    }
 
-	public void setEnderecoIP(String enderecoIP) {
-		this.enderecoIP = enderecoIP;
-	}
+    public void setEnderecoIP(String enderecoIP) {
+        this.enderecoIP = enderecoIP;
+    }
 
-	public String getSistemaOperacional() {
-		return sistemaOperacional;
-	}
+    public String getSistemaOperacional() {
+        return sistemaOperacional;
+    }
 
-	public void setSistemaOperacional(String sistemaOperacional) {
-		this.sistemaOperacional = sistemaOperacional;
-	}
+    public void setSistemaOperacional(String sistemaOperacional) {
+        this.sistemaOperacional = sistemaOperacional;
+    }
 
-	public List getSensores() {
-		return sensores;
-	}
+    public List getSensores() {
+        return sensores;
+    }
 
-	public void setSensores(List sensores) {
-		this.sensores = sensores;
-	}
+    public void setSensores(List sensores) {
+        this.sensores = sensores;
+    }
 
-	public StatusServidor getStatus() {
-		return status;
-	}
+    public StatusServidor getStatus() {
+        return status;
+    }
 
-	public void setStatus(StatusServidor status) {
-		this.status = status;
-	}
+    public void setStatus(StatusServidor status) {
+        this.status = status;
+    }
 
-	public Servidor(int id, String nome, String enderecoIP, String sistemaOperacional, List sensores, StatusServidor status) {
-		this.id = id;
-		this.nome = nome;
-		this.enderecoIP = enderecoIP;
-		this.sistemaOperacional = sistemaOperacional;
-		this.sensores = sensores;
-		this.status = status;
-	}
+    public boolean adicionarSensor(Sensor sensor) {
+        sensores.add(sensor);
+        return true;
+    }
 
-	public int getId() {
-		return id;
-	}
+    public boolean removerSensor(Sensor sensor) {
+        sensores.remove(sensor);
+        return false;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public double calcularCargaMedia() {
+        return calcularCargaMedia();
+    }
 
-	public String getNome() {
-		return nome;
-	}
+    public double verificarSaudeServidor() {
+        return verificarSaudeServidor();
+    }
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getEnderecoIP() {
-		return enderecoIP;
-	}
-
-	public void setEnderecoIP(String enderecoIP) {
-		this.enderecoIP = enderecoIP;
-	}
-
-	public String getSistemaOperacional() {
-		return sistemaOperacional;
-	}
-
-	public void setSistemaOperacional(String sistemaOperacional) {
-		this.sistemaOperacional = sistemaOperacional;
-	}
-
-	public List getSensores() {
-		return sensores;
-	}
-
-	public void setSensores(List sensores) {
-		this.sensores = sensores;
-	}
-
-	public StatusServidor getStatus() {
-		return status;
-	}
-
-	public void setStatus(StatusServidor status) {
-		this.status = status;
-	}
-
-	public boolean adicionarSensor() {
-		return false;
-	}
-
-	public boolean removerSensor() {
-		return false;
-	}
-
-	public double calcularCargaMedia() {
-		return 0;
-	}
-
-	public double verificarSaudeServidor() {
-		return 0;
-	}
-
-	public String gerarResumo() {
-		return null;
-	}
+    public String gerarResumo() {
+        return "Id" + id +
+                "Nome:" + nome +
+                "EnderecoIP:" + enderecoIP +
+                "Sistema Operacional: " + sistemaOperacional +
+                "Sensores: " + sensores +
+                "Status: " + status;
+    }
 
 }
