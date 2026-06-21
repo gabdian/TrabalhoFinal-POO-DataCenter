@@ -3,6 +3,7 @@ package core;
 import enums.StatusServidor;
 import sensor.Sensor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Servidor {
@@ -15,17 +16,17 @@ public class Servidor {
 
     private String sistemaOperacional;
 
-    private List sensores;
+    private List<Sensor> sensores;
 
     private StatusServidor status;
 
-    public Servidor(int id, String nome, String enderecoIP, String sistemaOperacional, List sensores, StatusServidor status) {
+    public Servidor(int id, String nome, String enderecoIP, String sistemaOperacional) {
         this.id = id;
         this.nome = nome;
         this.enderecoIP = enderecoIP;
         this.sistemaOperacional = sistemaOperacional;
-        this.sensores = sensores;
-        this.status = status;
+        this.sensores = new ArrayList<>();
+        this.status = StatusServidor.ONLINE;
     }
 
     public int getId() {
@@ -60,8 +61,8 @@ public class Servidor {
         this.sistemaOperacional = sistemaOperacional;
     }
 
-    public List getSensores() {
-        return sensores;
+    public List<Sensor> getSensores() {
+        return this.sensores;
     }
 
     public void setSensores(List sensores) {
