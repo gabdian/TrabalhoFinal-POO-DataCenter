@@ -1,6 +1,6 @@
 package enums;
 
-public enum StatusDataCenter {
+public enum statusdatacenter {
 
 	ATIVO,
 
