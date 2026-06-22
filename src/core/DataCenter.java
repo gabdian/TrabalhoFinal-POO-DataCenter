@@ -122,6 +122,15 @@ public class DataCenter {
 		return servidores.stream().collect(Collectors.groupingBy(Servidor::getStatus, Collectors.counting()));
 	}
 
+	public double calcularMediaUsoMemoria() {
+		return servidores.stream()
+				.flatMap(servidor -> servidor.getSensores().stream())
+				.filter(sensor -> sensor.getTipo().equalsIgnoreCase("Memoria")) // Filtra pela String do tipo
+				.mapToDouble(Sensor::getLeituraAtual)
+				.average()
+				.orElse(0.0);
+	}
+
 	public String gerarRelatorioGeral(List<String> alertasDoSistema) {
 		Relatorio relatorio = new Relatorio(this, alertasDoSistema);
 		relatorio.salvarEmArquivo();

@@ -24,7 +24,7 @@ public class Relatorio {
 		this.mediaTemperatura = dataCenter.calcularMediaTemperatura();
 		this.mediaEnergia = dataCenter.calcularMediaConsumoEnergia();
 		this.mediaCPU = dataCenter.calcularMediaUsoCPU();
-		this.mediaMemoria = 0.0;
+		this.mediaMemoria = dataCenter.calcularMediaUsoMemoria();
 		this.alertasGerados = alertasGerados;
 	}
 

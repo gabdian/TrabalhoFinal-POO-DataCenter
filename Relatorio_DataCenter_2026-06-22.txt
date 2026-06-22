@@ -1,0 +1,13 @@
+=========================================
+      RELATÓRIO GERAL DO DATA CENTER     
+=========================================
+Data de Geração: 22/06/2026
+Média de Temperatura: 24,25 °C
+Média de Consumo de Energia: 375,00 kW
+Média de Uso de CPU: 62,50 %
+Média de Uso de Memória: 67,50 %
+-----------------------------------------
+ALERTAS REGISTRADOS:
+- [CRÍTICO] Temperatura Média excedeu o limite seguro!
+- [CRÍTICO] Queda de energia externa detectada.
+=========================================
