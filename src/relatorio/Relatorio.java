@@ -1,12 +1,15 @@
 package relatorio;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
 import core.DataCenter;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+
 
 public class Relatorio {
 
@@ -54,10 +57,14 @@ public class Relatorio {
 		return sb.toString();
 	}
 
-	public void salvarEmArquivo() {
-		String nomeArquvo = "Relatorio_DataCenter_" + dataGeracao + ".txt";
-		try (BufferedWriter escritor = new BufferedWriter(new FileWriter(nomeArquvo))) {
-			escritor.write(gerarResumo());
+	public void salvarEmArquivoPDF() {
+		String nomeArquivo = "Relatorio_DataCenter_" + dataGeracao + ".pdf";
+		Document documento = new Document();
+		try {
+			PdfWriter.getInstance(documento, new FileOutputStream(nomeArquivo));
+			documento.open();
+			documento.add(new Paragraph(gerarResumo()));
+			documento.close();
 			System.out.println("Arquivo salvo com sucesso!");
 		} catch (IOException e) {
 			System.out.println("Erro de Leitura/Escrita: falha ao tentar salvar o arquivo.");

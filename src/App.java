@@ -3,6 +3,8 @@ import enums.*;
 import relatorio.Relatorio;
 import core.*;
 import sensor.*;
+import telas.DashboardGUI;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -91,6 +93,10 @@ public class App {
 
         String resumo = dcAlpha.gerarRelatorioGeral(listaAlertasParaRelatorio);
         System.out.println(resumo);
+        System.out.println("Iniciando Painel de Controle Gráfico...");
+        DashboardGUI tela = new DashboardGUI();
+        tela.exibirTela(resumo);
+
         System.out.println(">>> SIMULAÇÃO ENCERRADA COM SUCESSO <<<");
     }
 }

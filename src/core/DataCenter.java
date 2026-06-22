@@ -133,7 +133,7 @@ public class DataCenter {
 
 	public String gerarRelatorioGeral(List<String> alertasDoSistema) {
 		Relatorio relatorio = new Relatorio(this, alertasDoSistema);
-		relatorio.salvarEmArquivo();
+		relatorio.salvarEmArquivoPDF();
 		return relatorio.gerarResumo();
 	}
 
