@@ -2,11 +2,27 @@ package enums;
 
 public enum StatusServidor {
 
-	ONLINE,
+	ONLINE("Online", true),
 
-	OFFLINE,
+	OFFLINE("Offline", false),
 
-	SOBRECARGA,
+	SOBRECARGA("Sobrecarga", true),
 
-	MANUTENCAO
+	MANUTENCAO("Manutenção", false);
+
+	private final String descricao;
+	private final boolean operacional;
+
+	StatusServidor(String descricao, boolean operacional) {
+		this.descricao = descricao;
+		this.operacional = operacional;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public boolean isOperacional() {
+		return operacional;
+	}
 }

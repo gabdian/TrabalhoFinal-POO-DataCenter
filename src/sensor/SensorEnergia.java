@@ -7,7 +7,10 @@ public class SensorEnergia extends Sensor {
 	}
 
 	public double lerDado() {
-		return 0;
+		double range = getLimiteMaximo() - getLimiteMinimo();
+		double leitura = getLimiteMinimo() + Math.random() * range;
+		setLeituraAtual(leitura);
+		return leitura;
 	}
 
 }

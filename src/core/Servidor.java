@@ -65,7 +65,7 @@ public class Servidor {
         return this.sensores;
     }
 
-    public void setSensores(List sensores) {
+    public void setSensores(List<Sensor> sensores) {
         this.sensores = sensores;
     }
 
@@ -84,23 +84,34 @@ public class Servidor {
 
     public boolean removerSensor(Sensor sensor) {
         sensores.remove(sensor);
-        return false;
+        return true;
     }
 
     public double calcularCargaMedia() {
-        return calcularCargaMedia();
+        if (sensores == null || sensores.isEmpty()) {
+            return 0.0;
+        }
+
+        double soma = 0.0;
+        for (Sensor sensor : sensores) {
+            soma += sensor.getLeituraAtual();
+        }
+
+        return soma / sensores.size();
     }
 
     public double verificarSaudeServidor() {
-        return verificarSaudeServidor();
+        double carga = calcularCargaMedia();
+
+        return Math.max(0.0, 100.0 - carga);
     }
 
     public String gerarResumo() {
         return "Id" + id +
                 "Nome:" + nome +
                 "EnderecoIP:" + enderecoIP +
-                "Sistema Operacional: " + sistemaOperacional +
-                "Sensores: " + sensores +
+                "SO: " + sistemaOperacional +
+                "Sensores: " + sensores.size() +
                 "Status: " + status;
     }
 

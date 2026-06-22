@@ -6,8 +6,11 @@ public class SensorMemoria extends Sensor {
 		super(id, tipo, unidade, leituraAtual, limiteMinimo, limiteMaximo);
 	}
 
+	@Override
 	public double lerDado() {
-		return 0;
+		double range = getLimiteMaximo() - getLimiteMinimo();
+		double leitura = getLimiteMinimo() + Math.random() * range;
+		setLeituraAtual(leitura);
+		return leitura;
 	}
-
 }

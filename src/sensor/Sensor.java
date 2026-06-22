@@ -74,7 +74,10 @@ public abstract class Sensor {
 	public abstract double lerDado();
 
 	public boolean verificarAlerta() {
-		return false;
+		return leituraAtual < limiteMinimo || leituraAtual > limiteMaximo;
 	}
 
+	public boolean verificarLimites() {
+		return leituraAtual >= limiteMinimo && leituraAtual <= limiteMaximo;
+	}
 }
