@@ -58,7 +58,7 @@ public class App {
         dcAlpha.cadastrarServidor(serv2);
         dcAlpha.cadastrarServidor(serv3);
 
-        System.out.println("/n>>> EXECUTANDO VERIFICAÇÃO DE INFRAESTRUTURA <<<");
+        System.out.println("\n>>> EXECUTANDO VERIFICAÇÃO DE INFRAESTRUTURA <<<");
 
         double temperaturaAtual = dcAlpha.calcularMediaTemperatura();
         boolean houveQuedaDeEnergia = true;
